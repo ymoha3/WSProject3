@@ -1,0 +1,62 @@
+<%- include ../partials/header.ejs %>
+<%- include ../partials/main_nav.ejs %>
+<div class="container">
+    <div class="row">
+        
+        <div class="offset-md-3 col-md-6">
+            <h1><%= title %></h1>
+            <form class="form" method="post">
+                 <div class="form-group">
+                    <label for="itemTypeTextField">Item Type</label>
+                    <input type="text" class="form-control"
+                    id="itemTypeTextField"
+                    placeholder="Enter the Item Type (Main, Side, etc)"
+                    name="ItemType" required>
+                </div>
+                <div class="form-group">
+                    <label for="itemNameTextField">Item Name</label>
+                    <input type="text" class="form-control"
+                    id="itemNameTextField"
+                    placeholder="Enter the Item Name"
+                    name="ItemName" required>
+                </div>
+                <div class="form-group">
+                    <label for="descriptionTextField">Description</label>
+                    <input type="text" class="form-control"
+                    id="descriptionTextField"
+                    placeholder="Enter a description of the menu item"
+                    name="Description" required>
+                </div>
+                <div class="form-group">
+                    <label for="caloriesTextArea">Calories</label>
+                    <textarea type="text" class="form-control"
+                    id="caloriesTextArea"
+                    placeholder="Enter the amount of calories"
+                    name="Calories" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="priceTextField">Item Price</label>
+                    <input type="text" class="form-control"
+                    id="priceTextField"
+                    placeholder="Enter the price of the item"
+                    name="Price" required>
+                </div>
+                <div class="form-group">
+                    <label for="dietaryResTextField">Dietary Restrictions</label>
+                    <input type="text" class="form-control"
+                    id="dietaryResTextField"
+                    placeholder="Enter any dietary restrictions"
+                    name="DietaryRes" required>
+                </div>
+                <br>
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-edit"></i> Submit
+                </button>
+                <a href="/menu" class="btn btn-warning">
+                    <i class="fas fa-undo"></i> Cancel
+                </a>
+            </form>
+        </div>
+    </div>
+</div>
+<%- include ../partials/footer.ejs %>

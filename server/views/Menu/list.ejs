@@ -1,0 +1,53 @@
+
+<%- include ../partials/header.ejs %>
+<%- include ../partials/main_nav.ejs %>
+<!-- main content for database display-->
+<main class="container">
+    <div class="row">
+        <div class="offset-md-0 col-md-12">
+            <h1><%= title %></h1>
+            <br>
+            <a href = "/menu/add" class="btn btn-primary" role = "button">
+                <i class="fas fa-plus-circle"></i> Add an entry
+            </a> 
+            <table class="table table-bordred table-striped table-hover">
+                <!-- header row-->
+                <tr class="d-flex">
+                    <th class="text-center col-1">ItemType</th>
+                    <th class="text-center col-1">ItemName</th>
+                    <th class="text-center col-4">Description</th>
+                    <th class="text-center col-2">Calories</th>
+                    <th class="text-center col-1">Price</th>
+                    <th class="text-center col-2">DietaryRes</th>
+                    <th class="text-center col-1"></th>
+                </tr>
+                <!-- Repeat the code to read all the data -->
+                 <% for (let count = 0; count<menuList.length;count++) { %>
+                <tr class="d-flex">
+                    <td class="text-center col-1"><%= menuList[count].ItemType %></td>
+                        <td class="text-center col-1"><%= menuList[count].ItemName %></td>
+                        <td class="text-center col-4"><%= menuList[count].Description %></td>
+                        <td class="text-center col-"><%= menuList[count].Calories %></td>
+                        <td class="text-center col-1"><%= menuList[count].Price %></td>
+                        <td class="text-center col-2"><%= menuList[count].DietaryRes %></td>   
+                    <td class="text-center col-1">
+                    <a href= "/menu/edit/<%= menuList [count]._id%>"
+                        class="btn btn-primary btn-sm">
+                        <i class = "fas fa-pencil-alt" ></i> Edit
+                    </a></td>
+                   <td class="text-center col-1">
+                     <a href="/menu/delete/<%= menuList[count]._id %>" 
+                        class="btn btn-danger btn-sm"
+                         onclick="return confirm('Are you sure you want to delete <%= menuList[count].ItemName %>?');">
+                        <i class="fas fa-trash-alt"></i> Delete  </a>
+                    </td>
+
+                    
+                 </tr>
+              <%  } %>
+            </table>
+            
+        </div>
+    </div>
+</main>
+<%- include ../partials/footer.ejs %>
