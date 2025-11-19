@@ -8,35 +8,19 @@ let User = userModel.User;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Home',
-    displayName: req.user?req.user.displayName:""
-   });
+  res.render('index', { title: 'Express' });
 });
 
 /* GET home page. */
 router.get('/home', function(req, res, next) {
-  res.render('index', { title: 'Home',displayName: req.user?req.user.displayName:"" });
+  res.render('home', { title: 'Home' });
 });
 
-/* GET About page. */
+/* GET About  page. */
 router.get('/about', function(req, res, next) {
-  res.render('index', { title: 'About us',displayName: req.user?req.user.displayName:"" });
+  res.render('about', { title: 'About' });
 });
 
-/* GET products page. */
-router.get('/products', function(req, res, next) {
-  res.render('index', { title: 'Products',displayName: req.user?req.user.displayName:"" });
-});
-
-/* GET Services page. */
-router.get('/services', function(req, res, next) {
-  res.render('index', { title: 'Services',displayName: req.user?req.user.displayName:"" });
-});
-
-/* GET home page. */
-router.get('/contact', function(req, res, next) {
-  res.render('index', { title: 'Contact us',displayName: req.user?req.user.displayName:"" });
-});
 
 // Get method for login
 router.get('/login', function(req,res,next){
