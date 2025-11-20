@@ -1,0 +1,16 @@
+body { 
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
+    /* white to green gradient background */
+    background: linear-gradient(to bottom right , #00ff22, #d6f71f);
+
+   /* Ensure background covers the full viewport */
+   min-height: 100vh;
+   margin: 0;
+    background-attachment: fixed; /* Keeps gradient static during scroll */
+  }
+
+  a {
+   color: #00B7FF;
+  }

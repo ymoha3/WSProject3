@@ -19,7 +19,8 @@
                     <th class="text-center col-2">Calories</th>
                     <th class="text-center col-1">Price</th>
                     <th class="text-center col-2">DietaryRes</th>
-                    <th class="text-center col-1"></th>
+                    <th class ="text-center col-1">Edit</th>
+                    <th class="text-center col-1">Delete</th>
                 </tr>
                 <!-- Repeat the code to read all the data -->
                  <% for (let count = 0; count<menuList.length;count++) { %>
@@ -27,7 +28,7 @@
                     <td class="text-center col-1"><%= menuList[count].ItemType %></td>
                         <td class="text-center col-1"><%= menuList[count].ItemName %></td>
                         <td class="text-center col-4"><%= menuList[count].Description %></td>
-                        <td class="text-center col-"><%= menuList[count].Calories %></td>
+                        <td class="text-center col-2"><%= menuList[count].Calories %></td>
                         <td class="text-center col-1"><%= menuList[count].Price %></td>
                         <td class="text-center col-2"><%= menuList[count].DietaryRes %></td>   
                     <td class="text-center col-1">
