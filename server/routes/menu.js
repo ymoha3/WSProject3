@@ -18,7 +18,7 @@ router.get('/', async (req, res, next) => {
     try {
         const menuList = await Menu.find();   
         console.log(menuList);
-        res.render('menu/list', {
+        res.render('Menu/list', {
             title: "Menu List",
             menuList: menuList,                
             displayName: req.user ? req.user.displayName : ""
@@ -26,7 +26,7 @@ router.get('/', async (req, res, next) => {
     }
     catch (err) {
         console.log(err);
-        res.render('menu/list', {
+        res.render('Menu/list', {
             title: "Menu List",
             menuList: [],
             error: 'Server Error'
@@ -37,14 +37,14 @@ router.get('/', async (req, res, next) => {
 // GET: Display Add Page
 router.get('/add', (req, res, next) => {
     try {
-        res.render('menu/add', {
+        res.render('Menu/add', {
             title: "Add Menu Item",
             displayName: req.user ? req.user.displayName : ""
         });
     }
     catch (err) {
         console.log(err);
-        res.render('menu/list', { error: 'Server Error' });
+        res.render('Menu/list', { error: 'Server Error' });
     }
 });
 
@@ -66,7 +66,7 @@ router.post('/add', async (req, res, next) => {
 }   
     catch (err) {
         console.log(err);
-        res.render('menu/list', { error: 'Server Error' });
+        res.render('Menu/list', { error: 'Server Error' });
     }
 });
 
@@ -76,7 +76,7 @@ router.get('/edit/:id', async (req, res, next) => {
         const id = req.params.id;
         const menuToEdit = await Menu.findById(id);
 
-        res.render("menu/edit", {
+        res.render("Menu/edit", {
             title: "Edit Menu Item",
             menu: menuToEdit,
             displayName: req.user ? req.user.displayName : ""
